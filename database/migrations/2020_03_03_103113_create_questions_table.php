@@ -14,7 +14,7 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
@@ -22,10 +22,11 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('answers')->default(0);
             $table->integer('votes')->default(0);
             $table->unsignedInteger('best_answer_id')->nullable();
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-            $table->foreign('user_id')->reference('id')->on('users')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+
     }
 
     /**
