@@ -13,8 +13,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card-body">
+                    @include('layouts._messeges')
                    @foreach ($questions as $question)
                         <div class="media">
                             <div class="d-flex flex-column counters">
@@ -36,7 +37,7 @@
                                     <small class='text-muted'> {{$question->created_date}}</small>
                                     </p>
                                     {{str_limit($question->body,255)}}
-                                    
+
                                 </div>
                         </div>
                    <hr>
