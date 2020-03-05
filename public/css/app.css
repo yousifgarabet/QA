@@ -10919,3 +10919,7 @@ a.text-dark:focus {
   color: white;
 }
 
+form.form-delete {
+  display: inline;
+}
+
