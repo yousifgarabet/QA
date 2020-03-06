@@ -45,5 +45,9 @@ class User extends Authenticatable
         //return \route('questions.show',$this->id);
         return "#";
     }
-    
+    //create relationship between question and answer model
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }
