@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://cdn4.iconfinder.com/data/icons/contact-us-set-6/256/50-512.png" width="400"></p>
 
 <p align="center">
 Question and Answer web app by Laravel</p>
