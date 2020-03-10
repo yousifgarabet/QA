@@ -115,12 +115,12 @@ class QuestionsController extends Controller
     public function destroy(Question $question)
     {
         //  autherizing using gate
-        // if (\Gate::denies('delete-question', $question)) {
-        //     abort(403,'Access Denied');
-        // }
+        if (\Gate::denies('delete-question', $question)) {
+            abort(403,'Access Denied');
+        }
 
-                // Autherizing using policy
-        $this->authorize('delete ', $question);
+        //         // Autherizing using policy
+        // $this->authorize('delete ', $question);
         $question->delete();
         return redirect('/questions')->with('success','Your question has been deleted');
     }
