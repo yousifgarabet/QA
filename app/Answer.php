@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\This;
 
 class Answer extends Model
 {
@@ -43,5 +44,9 @@ class Answer extends Model
      public function getCreatedDateAttribute()
      {
          return $this->created_at->diffForHumans();
+     }
+     public function getStatusAttribute()
+     {
+         return $this->id ==$this->question->best_answer_id? 'vote-accepted': '';
      }
 }
