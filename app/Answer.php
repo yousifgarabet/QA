@@ -28,7 +28,12 @@ class Answer extends Model
          parent::boot();
          static::created(function($answer)
          {
-            $answer->question->increment('answers_count');
+             $question =  $answer->question;
+            $question->increment('answers_count');
+            if ($question->best_answer_id == $answer->id) {
+                $question->best_answer_id=null;
+                $question->save();
+            }
          });
 
          static::deleted(function($answer){
